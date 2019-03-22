@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/templates/template.xhtml">
+	<ui:define name="content">
+		<h:form id="formListaTurma">
+			<p:commandButton value="#{messages['listaTurma.bt_novaTurma']}" />
+			<p:dataTable var="turma" value="#{listaTurmaManager.turmas}" reflow="true" rows="5" paginator="true">
+				<p:column headerText="${messages['listaTurma.cl_disciplina']}">
+					<h:outputText value="#{turma.disciplina}"/>
+				</p:column>
+				<p:column headerText="${messages['listaTurma.cl_semestre']}">
+					<h:outputText value="#{turma.semestre}"/>
+				</p:column>
+				<p:column headerText="${messages['listaTurma.cl_instituicao']}">
+					<h:outputText value="#{turma.instituicao}"/>
+				</p:column>
+				<p:column headerText="${messages['listaTurma.cl_gerenciar']}">
+					
+				</p:column>
+				<p:column headerText="${messages['listaTurma.cl_atualizar']}">
+					
+				</p:column>
+				<p:column headerText="${messages['listaTurma.cl_excluir']}">
+					
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
